@@ -1,0 +1,87 @@
+body{
+	margin:40px auto;
+	max-width:950px;
+	line-height:1.6;
+	font-size:18px;
+	color:#444;
+	padding:0 10px;
+}
+
+.styleTable {
+	border-collapse: collapse;
+	border: thin;
+	margin: 25px 0;
+	font-size: 0.9em;
+	font-family: sans-serif;
+	min-width: 400px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styledTable thead tr {
+	background-color: #009879;
+	color: #ffffff;
+	text-align: left;
+}
+
+.styleTable th,
+.styleTable td {
+	padding: 12px 15px;
+}
+
+.styleTable tbody tr {
+	border-bottom: 1px solid #dddddd;
+}
+
+.styleTable tbody tr:nth-of-type(even) {
+	background-color: #f3f3f3;
+}
+
+.styleTable tbody tr:last-of-type {
+	border-bottom: 2px solid #009879;
+}
+.styleTable tbody tr.active-row {
+	font-weight: bold;
+	color: #009879;
+}
+
+.btn {
+	color: white;
+	background-color: #2ca58d;
+	border-radius: 10px;
+	padding: 8px;
+}
+
+.btn:hover {
+	transition: all 1s;
+
+}
+
+.fright{
+	float: right;
+} 
+
+.badge {
+	padding: 3px 5px;
+	font-size: 15px;
+}
+.add {
+	background-color: #f4a261;
+}
+
+.primary {
+	background-color: #2a7cdf;
+}
+
+.danger {
+	background-color: #e63946;
+}
+
+h1,h2,h3{
+	line-height:1.2
+}
+a{
+	text-decoration: none;
+}
+.centertext{
+	text-align: center;
+}
