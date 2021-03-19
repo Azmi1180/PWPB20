@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 jurusan = '$jurusan',
                 file = '$file'
             WHERE nis = '$nis'
-            ";
+            "; 
 
     $mysqli->query($sql) or die($mysqli->error);
 
