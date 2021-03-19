@@ -70,9 +70,13 @@
                 <td>
                     <a href="edit.php?nis=<?= $siswa["nis"]; ?>" class="badge badge-primary">Edit</a>
                     <a href="delete.php?nis=<?= $siswa["nis"]; ?>" class="badge badge-danger" onclick="return confirm('Apakah anda yakin ingin menghapus data tersebut ?')">Delete</a></td>
-                <td>
-                  <img src="<?= base_url(); ?> ./assets/images/<?= $siswa['file']; ?>" width="68px" alt="kontol">
-                </td> 
+                    <td>
+                    <?php if (!empty($siswa['file'])) { ?>
+                    <img width="90" height="90" src="<?php echo base_url() ?>/assets/img/<?php echo $siswa['file'] ?>">
+                    <?php } else { ?>
+                    <img width="90" height="90" src="assets/img/ava1.png">
+                    <?php } ?>
+                </td>
             </tr>
             <?php } ?>
         </tbody>

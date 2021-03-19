@@ -2,7 +2,7 @@
     session_start();
 
     function base_url (){
-        return "http://localhost/PWPB20/views/v_login.php";
+        return "http://localhost/Praktikum19";
         
     }
 
