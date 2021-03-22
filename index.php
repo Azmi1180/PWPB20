@@ -3,7 +3,7 @@
 
     cekLogin();
 
-    $sql = 'SELECT * FROM siswa';
+    $sql = 'SELECT * FROM siswa INNER JOIN kelas ON (siswa.id_kelas = kelas.id_kelas)';
 
     // Searching
     $search = @$_GET['search'];

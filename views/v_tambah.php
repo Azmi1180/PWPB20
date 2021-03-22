@@ -32,24 +32,17 @@
             </label>
         </div>
         <div>
-            <div>
-                <label>Kelas</label>
-            </div>
-            <select class="custom-select" id="inputGroupSelect01" name="kelas" required>
-                <option value="XI MM" <?= @$siswa['kelas'] == 'XI MM' ? 'selected' : '' ?>>XI MM</option>
-                <option value="XI RPL 1" <?= @$siswa['kelas'] == 'XI RPL 1' ? 'selected' : '' ?>>XI RPL 1</option>
-                <option value="XI RPL 2" <?= @$siswa['kelas'] == 'XI RPL 2' ? 'selected' : '' ?>>XI RPL 2</option>
-                <option value="XI RPL 3" <?= @$siswa['kelas'] == 'XI RPL 3' ? 'selected' : '' ?>>XI RPL 3</option>
-                <option value="XI TKJ 1" <?= @$siswa['kelas'] == 'XI TKJ 1' ? 'selected' : '' ?>>XI TKJ 1</option>
-                <option value="XI TKJ 2" <?= @$siswa['kelas'] == 'XI TKJ 2' ? 'selected' : '' ?>>XI TKJ 2</option>
-                <option value="XI TOI 1" <?= @$siswa['kelas'] == 'XI TOI 1' ? 'selected' : '' ?>>XI TOI 1</option>
-                <option value="XI TOI 2" <?= @$siswa['kelas'] == 'XI TOI 2' ? 'selected' : '' ?>>XI TOI 2</option>
-                <option value="XI TITL 1" <?= @$siswa['kelas'] == 'XI TITL 1' ? 'selected' : '' ?>>XI TITL 1</option>
-                <option value="XI TITL 2" <?= @$siswa['kelas'] == 'XI TITL 2' ? 'selected' : '' ?>>XI TITL 2</option>
-                <option value="XI AVI 1" <?= @$siswa['kelas'] == 'XI AVI 1' ? 'selected' : '' ?>>XI AVI 1</option>
-                <option value="XI AVI 2" <?= @$siswa['kelas'] == 'XI AVI 2' ? 'selected' : '' ?>>XI AVI 2</option>
-                <option value="XI AVI 3" <?= @$siswa['kelas'] == 'XI AVI 3' ? 'selected' : '' ?>>XI AVI 3</option>
-                <option value="XI AVI 4" <?= @$siswa['kelas'] == 'XI AVI 4' ? 'selected' : '' ?>>XI AVI 4</option>
+        <div>
+            <label>Kelas</label>
+        </div>
+            <select class="custom-select" id="inputGroupSelect01" name="id_kelas" required>
+                <option value="id_kelas">
+                    <?php while($murid = @$dataKelas->fetch_array()) {?>
+                        <option value="<?php echo $murid['id_kelas'] ?>" <?php echo @$siswa['kelas'] == $murid['id_kelas'] ? 'selected' : '' ?>> 
+                            <?php echo $murid['nama_kelas'] ?>
+                        </option>
+                    <?php } ?>
+                </option>
             </select>
         </div>
         <div>

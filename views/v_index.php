@@ -71,7 +71,7 @@
                 <td><?= $siswa['nis']; ?></td>    
                 <td><?= $siswa['nama_lengkap']; ?></td>
                 <td><?= $siswa['jenis_kelamin']; ?></td>
-                <td><?= $siswa['kelas']; ?></td>
+                <td><?= $siswa['nama_kelas']; ?></td>
                 <td><?= $siswa['jurusan']; ?></td>                
                 <td>
                     <a href="edit.php?nis=<?= $siswa["nis"]; ?>" class="btn btn-warning">Edit</a>

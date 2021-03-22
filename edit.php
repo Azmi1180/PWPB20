@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nis = $_POST['nis'];
     $nama_lengkap = $_POST['nama_lengkap'];
     $jenis_kelamin = $_POST['jenis_kelamin'];
-    $kelas = $_POST['kelas'];
+    $kelas = $_POST['id_kelas'];
     $jurusan = $_POST['jurusan'];
     $file = $_POST['foto'];
 
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sql = "UPDATE siswa SET
                 nama_lengkap = '$nama_lengkap',
                 jenis_kelamin = '$jenis_kelamin',
-                kelas = '$kelas',
+                id_kelas = '$kelas',
                 jurusan = '$jurusan',
                 file = '$file'
             WHERE nis = '$nis'
@@ -46,4 +46,6 @@ $siswa = $query->fetch_array();
 
 if (empty($siswa)) header('location: index.php');
 
+$sql = "SELECT * FROM kelas";
+$dataKelas = $mysqli->query($sql) or die($mysqli->error);
 include 'views/v_tambah.php';
