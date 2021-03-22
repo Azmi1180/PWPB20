@@ -2,30 +2,51 @@
 <html>
 <head>
     <title>PWPB</title>
-    <link rel="stylesheet" type="text/css" href="assets/aldo.css">
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
 </head>
-<body>
-    <?php
-        $action = 'tambah.php';
-        if (!empty($siswa)) $action = 'edit.php'
-    ?>
+<body>    
+    <div>
+    
+
+        <?php
+            $action = 'tambah.php';
+            if (!empty($siswa)) $action = 'edit.php';
+        ?>
+
+        <?php if(!empty($success)) { ?>
+            <div class="alert alert-success">
+                <p><?= $success ?></p>
+            </div>
+        <?php } ?>
+        
+        <?php if(!empty($error)) { ?>
+            <div class="alert alert-danger">
+                <p><?= $error ?></p>
+            </div>
+        <?php } ?>
+        <?php if(!empty($error1)) { ?>
+            <div class="alert alert-danger">
+                <p><?= $error1 ?></p>
+            </div>
+        <?php } ?>
+    </div>
     <form method="POST" enctype="multipart/form-data" action="<?= $action ?>">
         <div>
-            <div >
+            <div>
                 <span>Nis</span>
             </div>
-            <input type="text" placeholder="Masukkan Nomor induk siswa" name="nis" value="<?= @$siswa['nis'] ?>" required>
+            <input type="text" placeholder="Masukkan Nomor induk siswa" name="nis" value="<?= @$siswa['nis'] ?>">
         </div>
         <div>
             <div>
                 <span>Nama Lengkap</span>
             </div>
-            <input type="text" name="nama_lengkap" value="<?= @$siswa['nama_lengkap'] ?>" required>
+            <input type="text" name="nama_lengkap" value="<?= @$siswa['nama_lengkap'] ?>" >
         </div>
         <div>
             <label>
             <h5>jenis_kelamin :</h5>
-            <input type="radio" name="jenis_kelamin" value="L" <?= @$siswa['jenis_kelamin'] == 'L' ? 'checked' : '' ?> required> Laki-laki
+            <input type="radio" name="jenis_kelamin" value="L" <?= @$siswa['jenis_kelamin'] == 'L' ? 'checked' : '' ?> > Laki-laki
             </label>
             <label>
                 <input type="radio" name="jenis_kelamin" value="P" <?= @$siswa['jenis_kelamin'] == 'P' ? 'checked' : '' ?>> Perempuan
@@ -35,7 +56,7 @@
         <div>
             <label>Kelas</label>
         </div>
-            <select class="custom-select" id="inputGroupSelect01" name="id_kelas" required>
+            <select class="custom-select" id="inputGroupSelect01" name="id_kelas" >
                 <option value="id_kelas">
                     <?php while($murid = @$dataKelas->fetch_array()) {?>
                         <option value="<?php echo $murid['id_kelas'] ?>" <?php echo @$siswa['kelas'] == $murid['id_kelas'] ? 'selected' : '' ?>> 
@@ -49,7 +70,7 @@
             <div>
                 <span>Jurusan</span>
             </div>
-                <input type="text" placeholder="Masukkan Jurusan anda" name="jurusan" value="<?= @$siswa['jurusan']; ?>" required>
+                <input type="text" placeholder="Masukkan Jurusan anda" name="jurusan" value="<?= @$siswa['jurusan']; ?>" >
         </div>
         <div class="">
             <img src="<?= base_url();  ?>/assets/images/<?= @$siswa['foto'];?>" alt="">
