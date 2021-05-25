@@ -78,7 +78,7 @@
                     <a class="btn btn-danger btnDelete" href="delete.php?nis=<?= $siswa["nis"]; ?>">Delete</a></td>
                 <td>
                     <?php if (!empty($siswa['file'])) { ?>
-                    <img width="90" height="90" src="<?php echo base_url() ?>/assets/img/<?php echo $siswa['file'] ?>">
+                        <img src="<?= base_url(); ?>/assets/images/<?= $siswa['file']; ?>" width="90px";>
                     <?php } else { ?>
                     <img width="90" height="90" src="assets/img/ava1.png">
                     <?php } ?>
